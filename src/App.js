@@ -1,23 +1,40 @@
-import logo from './logo.svg';
+import React, { useState } from 'react';
+import Dropdown from './Dropdown';
+import Navbar from './components/navbar/Navbar';
+import Featured from './components/featured/Featured';
+
 import './App.css';
 
+
+
 function App() {
+  const [movieList, setMovieList] = useState([]);
+  const [fruit, setFruit] = useState("");
+
+  const handleFruitDropdownChange = (selectedFruit) => {
+    setFruit(selectedFruit);
+  };
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+      <header>
+      <Navbar/>
+      
+   
+
+      <h1>Movies App</h1>
       </header>
+
+      <Featured/>
+      
+
+      <Dropdown
+        onChange={handleFruitDropdownChange}
+        options={["orange", "pear", "lemon"]}
+        value={fruit}
+      />
+<Dropdown options={["tennis", "soccer", "basketball"]} />
+      <Dropdown options={["1", "2", "3"]} />
     </div>
   );
 }

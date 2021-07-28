@@ -1,0 +1,21 @@
+.featured {
+    height: 90vh;
+    position: relative;
+
+    .info{
+        width: 35px;
+        position: flex;
+        left: 50px;
+        bottom: 100px;
+        color: white;
+
+    .description{
+            margin: 20px 0px;
+            width: 35px;
+        }
+
+    .buttons{
+            display: flex;
+        }
+    }
+}
